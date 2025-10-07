@@ -1,0 +1,43 @@
+{
+  "name": "studymate",
+  "version": "1.0.1",
+  "description": "Studymate Node.js project with Vite",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "npm run build && node ./src/index.js",
+    "dev": "vite --config src/vite.config.js",
+    "build": "vite build --config src/vite.config.js",
+    "start:prod": "npm run build && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcrypt": "latest",
+    "cors": "latest",
+    "dotenv": "latest",
+    "express": "latest",
+    "firebase": "latest",
+    "jsonwebtoken": "latest",
+    "mariadb": "latest",
+    "minio": "latest",
+    "multer": "latest",
+    "mysql": "latest",
+    "mysql2": "latest",
+    "nodemailer": "latest",
+    "path": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "redis": "latest",
+    "secretkey": "latest",
+    "socket.io": "latest",
+    "uuid": "latest",
+    "validator": "latest",
+    "websocket": "latest",
+    "winston": "latest",
+    "winston-transport": "latest",
+    "ws": "latest",
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest"
+  },
+  "license": "ISC",
+  "author": "Jang Kyeong Jun"
+}

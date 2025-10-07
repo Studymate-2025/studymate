@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 페이지 제목 -->
+  <title>Studymate - React + Vite + Express</title>
+
+  <!-- 기본 스타일 -->
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+      background-color: #fafafa;
+      color: #222;
+    }
+
+    header {
+      padding: 1rem;
+      background-color: #0044cc;
+      color: white;
+      text-align: center;
+    }
+
+    footer {
+      padding: 1rem;
+      text-align: center;
+      color: #666;
+      font-size: 0.85rem;
+    }
+
+    #root {
+      padding: 1rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: #0044cc;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      background: #f3f3f3;
+      border-bottom: 1px solid #ddd;
+      padding: 0.75rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>📚 Studymate 스터디메이트</h1>
+    <p>React + Vite + Express + Socket.io 통합 프로젝트</p>
+  </header>
+
+  <!-- React가 이 div에 마운트됩니다 -->
+  <div id="root"></div>
+
+  <footer>
+    <p>© 2025 Studymate</p>
+  </footer>
+
+  <!-- React 진입점 -->
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
