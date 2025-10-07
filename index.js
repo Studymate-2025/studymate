@@ -6,12 +6,11 @@ const server = http.createServer(app);
 require('dotenv').config();
 
 const { initSocket } = require("./sockets/socketServer");
-const io = initSocket(server); 
+const io = initSocket(server);
 
 const { logger, initLogger } = require('./logger');
 initLogger(io);
 
-// 1. API 라우터를 먼저 등록합니다.
 app.use(express.json()); // JSON 파싱
 
 const authRoutes = require('./routes/auth');
@@ -20,14 +19,12 @@ const studyRouter = require('./routes/study');
 const chatRoutes = require('./routes/chat');
 const socketRoutes = require('./routes/socket');
 
-// '/api'로 시작하는 경로는 API 요청으로 처리합니다.
 app.use('/api/auth', authRoutes);
 app.use('/api/upload', uploadRoutes);
 app.use('/api/study', studyRouter);
 app.use('/api/chat', chatRoutes);
-app.use('/api/socket', socketRoutes); 
+app.use('/api/socket', socketRoutes);
 
-// 2. 개발용 로그 뷰어 라우터를 등록합니다.
 app.get('/logs', (req, res) => {
   logger.info('로그 페이지 접속 확인', {
     ip: req.ip,
@@ -79,16 +76,12 @@ app.get('/logs', (req, res) => {
   `);
 });
 
-// 3. 마지막으로, React 프론트엔드를 제공하는 코드를 둡니다.
 
 // ✅ 수정된 경로: __dirname과 같은 레벨에 있는 build 폴더를 찾습니다.
 const buildPath = path.join(__dirname, 'build');
 
-// 3-1. 빌드된 React 앱의 정적 파일들을 제공합니다.
 app.use(express.static(buildPath));
 
-// 3-2. 위에서 정의된 API, logs 경로를 제외한 모든 요청에 대해
-// React 앱의 'index.html'을 보냅니다. 이 코드는 다른 모든 라우터보다 뒤에 위치해야 합니다.
 app.use((req, res) => {
   res.sendFile(path.join(buildPath, 'index.html'));
 });
